@@ -1,0 +1,14 @@
+type Time = int;
+type Item = 
+ record {
+   completed: bool;
+   description: text;
+   id: nat;
+   timestamp: Time;
+ };
+service : {
+  addItem: (text) -> (nat);
+  getItems: () -> (vec Item) query;
+  removeItem: (nat) -> (bool);
+  toggleItemStatus: (nat) -> (bool);
+}
